@@ -12,18 +12,20 @@ print(f"Welcome to LeedsBank's savings calculator {name}!")
 
 try:
     amountToSave = int(input("Input an amount you want to save every month"))
-except:
-    print("Enter an integer")
+
 
 # Calculate the total amount of money they will have saved by the end of the year (amount per month multiplied by 12).
 # print this out for the user with a suitable message.
 
-totalAmount = amountToSave*12
-print(f"You will have saved £{totalAmount} by the end of the year.")
+    totalAmount = amountToSave*12
+    print(f"You will have saved £{totalAmount} by the end of the year.")
 
 # Calculate the total amount of money including interest (0.8% of the final annual amount) they will have saved in a year.
 # print this out in the format £X.XX (to two decimal places).
 
-totalWithInterest = totalAmount * 0.8
-print(totalWithInterest:.2f)
+    totalWithInterest = totalAmount * 1.008
+    print(f"£{totalWithInterest:.2f}")
+
+except:
+    print("Invalid amount")
 
