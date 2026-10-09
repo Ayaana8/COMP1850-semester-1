@@ -17,7 +17,12 @@ if numbers:
     else:
         median = ((orderedNum[len(numbers)//2 - 1]) + (orderedNum[len(numbers)//2])) / 2
 
-    print(f"Minimum = {minimum} Maximum = {maximum} mean = {mean} median = {median}")
+    print(f"Maximum = {maximum}")
+    print(f"Minimum = {minimum}")
+    print(f"Mean = {mean}")
+    print(f"Median = {median}")
+    
+
 else:
     sys.exit("Error: no numbers provided")
 
