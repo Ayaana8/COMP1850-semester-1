@@ -13,5 +13,12 @@ courseList.sort()
 
 print(courseList)
 
+# Implementing using range
+
+for ch in range(len(course)):
+	courseList.append(course[ch])
+
+
+
 # create a list data structure of the characters from the course string
 # sort the list into alphabetical order
