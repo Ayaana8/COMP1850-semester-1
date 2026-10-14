@@ -11,11 +11,12 @@ maxtime = int(input())  # read an integer number of steps (>0)
 
 state = "red"
 
-print(f"Time {systime:03} State {state}")
+#print(f"Time {systime:03} State {state}")
 
-while systime < maxtime:
+while systime <= maxtime:
     for i in range(states[state]):
-        print(f"Time {systime:03} State {state}")
+        if systime <= maxtime:
+            print(f"Time {systime:03} State {state}")
         systime +=1
     if state == "red":
         state = "red_amber"
