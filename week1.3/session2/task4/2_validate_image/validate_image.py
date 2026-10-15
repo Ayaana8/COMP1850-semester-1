@@ -5,6 +5,21 @@
 
 # Read the file content
 
+
+with open("../images/gradient.pgm","r") as infile:
+        lines = infile.readlines()
+        dimensions = lines[1].split()
+        maxGreyVal = lines[2]
+        width = dimensions[0]
+        height = dimensions[1]
+
+        for line in infile:
+            lineList = line.split()
+            for i in range(len(lineList)):
+                  if i > maxGreyVal or i < 0:
+                        print("Invalid pixel values")
+
+
 # Store the width, the height, and the maximum gray value
 
 # For each pixel, check if the pixel value is between 0 and the maximum gray value inclusive

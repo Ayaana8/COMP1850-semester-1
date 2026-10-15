@@ -7,6 +7,11 @@
 
 # open and read the file
 
+failedLogin = []
+with open("site.log","r") as infile:
+    failedLogin = [line for line in infile if '401'in line and 'POST /login']
+
+print(failedLogin)
 # find all failed login attempts (POST /login with the response 401)
 # and print these out in a human-readable format:
 # IP address 192.168.1.17 failed to login at 10:42:12 on 2024-10-20
