@@ -15,7 +15,9 @@ print(newval)
 
 newval.clear()
 
-newval = [2*value for value in values if i %2 == 0 else newval.append(i)]
+newval.append([2*value if value % 2 == 0 else value for value in values])
+
+print(newval)
 
 # write the list comprehension equivalent to the `for` loop
 
