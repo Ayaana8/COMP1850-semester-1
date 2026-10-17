@@ -9,6 +9,45 @@
 #   - the widget which has been sold the most
 # and print these out in a nice, human-readable format
 
+with open("sales.csv","r") as infile:
+
+    data = infile.readlines()
+    data = [ line.strip().split(",") for line in data[1:]]
+
+ProductToSaleMapping = {}
+
+LargestSaleDay = 0
+HighestSale =0
+TotalSales = 0
+for i in range(len(data)):
+    if (int(data[i][2]) > HighestSale):
+        HighestSale = int(data[i][2])
+        LargestSaleDay = data[i][0]
+
+    TotalSales += int(data[i][2])
+
+    if data[i][1] in ProductToSaleMapping:
+        ProductToSaleMapping[data[i][1]] += 1
+    else:
+        ProductToSaleMapping[data[i][1]] =1
+
+AvgSale = TotalSales / len(data)
+
+HighestQuantity = 0
+MostSold = ""
+
+HighestQuantity = max(ProductToSaleMapping.values())
+
+for i in ProductToSaleMapping.keys():
+    if ProductToSaleMapping[i] == HighestQuantity:
+        MostSold = i
+
+
+
+print(LargestSaleDay)
+print(f"£{AvgSale}")
+print(MostSold)
+
 
 # additional: you can calculate other sales statistics such as:
 # - total sales for each region
