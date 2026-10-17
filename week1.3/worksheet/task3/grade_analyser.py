@@ -4,9 +4,48 @@
 
 # ask for filename of the student file
 
+fileName = input("What is the name of the student file?  ")
+
 # open the file
 
 # read in the data, and for each student calculate their average grade and classification
+
+averages = []
+classifications =[]
+
+with open(fileName,"r") as infile:
+
+    data = infile.readlines()
+    data = [ line.strip().split(",") for line in data[1:]]
+
+currTotal =0
+currClassification =""
+
+currMean=0
+
+for i in range(len(data)):
+    for j in range(1,len(data[i])):
+        if data[i][j] != "":
+            currTotal += int(data[i][j])
+    currMean = (currTotal/len(data[i]))
+
+    if currMean >= 70:
+        currClassification = "1"
+    elif currMean >= 60:
+        currClassification= "2:1"
+    elif currMean >=50:
+        currClassification = "2:2"
+    elif currMean >=40:
+        currClassification = "3"
+    else:
+        currClassification= "F"
+
+    averages.append(currMean)
+    classifications.append(currClassification)
+
+with open(f"{fileName}_out.csv","w") as outfile:
+    for i in range(len(data)):
+        outfile.write(f"{data[i][0]}, {averages[i]:.2f}, {classifications[i]} \n")
 
 
 
