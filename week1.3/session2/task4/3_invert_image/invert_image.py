@@ -17,3 +17,5 @@
 #   for example line = [255, 255, 0, 255, 255]
 #   string_line = " ".join(str(item) for item in line)
 #   # output: string_line = "255 255 0 255 255"
+
+#with open("../images/gradient.pgm","r") as infile:

@@ -19,3 +19,4 @@ age = int(input("Enter your age: "))
 check_vote_eligibility(age)
 
 # what is the return value from check_vote_eligibility?
+#It doesn't have a return value, it outputs directly

@@ -17,6 +17,8 @@ print(add_two_numbers(3, num2=4))
 
 # Why does the next line work?
 print(add_two_numbers("3", "4"))
+#The function uses the values as integers (has integer arguments), so converts them to integers
 
 # What happens if you try this? Uncomment the code to find out.
-# print(add_two_numbers("three", "four"))
+#print(add_two_numbers("three", "four"))
+# It doesn't work because these strings cannot be directly converted to integers

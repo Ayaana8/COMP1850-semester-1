@@ -11,13 +11,13 @@
 def process_data(data):
     """
     Processes a list of integers and returns the sum of all values.
-    If the list is empty, it returns None.
+    If the list is empty, it returns 0.
 
     Args:
         data (list of int): The list of integers to process.
 
     Returns:
-        int: The sum of all integers in the list or None if empty.
+        int: The sum of all integers in the list or 0 if empty.
     """
     if not data:
         return 0
