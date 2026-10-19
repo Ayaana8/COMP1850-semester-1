@@ -18,4 +18,14 @@
 #   string_line = " ".join(str(item) for item in line)
 #   # output: string_line = "255 255 0 255 255"
 
-#with open("../images/gradient.pgm","r") as infile:
+"""
+with open("../images/gradient.pgm","r") as infile:
+    lineToListMapping = {}
+
+    data = infile.readlines()
+    data = [ line.strip().split(" ") for line in data[3:]]
+
+    for i in range(len(data)):
+"""
+        
+            
