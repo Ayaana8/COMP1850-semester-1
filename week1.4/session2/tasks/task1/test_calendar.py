@@ -18,6 +18,10 @@ print(calendar.month(2025, 10))
 # to the month function with different values of w and l and observe the
 # output.
 
+print(calendar.month(2025,10,5,10))
+print(calendar.month(2025,10,2,2))
+
+# The width and the length of the spacing between the dates
 
 # While at https://docs.python.org/3/library/calendar.html, explore
 # the calendar function(calendar.calendar, yes the function is called
@@ -28,3 +32,8 @@ print(calendar.month(2025, 10))
 # Your task is to write code to make 3 functions calls to the calendar
 # function with different values to the optional arguments (w, l, c, and m).
 # Display the output to observe the differences.
+
+print(calendar.calendar(2026))
+print(calendar.calendar(2026,1,2,3,4))
+print(calendar.calendar(2026,10,5,6,8))
+

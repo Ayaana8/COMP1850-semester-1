@@ -18,9 +18,14 @@ def digits_sum(number):
         int: The sum of the digits of the input integer.
     """
     # complete your code here
+    
+
     # base case
+    if number == 0:
+        return 0
 
     # recursive case
+    return number + digits_sum(str(number)[1:])
 
 
 # check if correct output is produced

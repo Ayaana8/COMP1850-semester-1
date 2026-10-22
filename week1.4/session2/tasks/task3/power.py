@@ -6,9 +6,13 @@
 
 def power(x, n):
     # complete your code here
+    x = x * x
     # base case
-
+    if n == 0:
+        return 1
     # recursive case
-
+    return power(x,n-1)
 
 # Once completed, make at least two function calls to test the power function
+
+print(power(2,3))
