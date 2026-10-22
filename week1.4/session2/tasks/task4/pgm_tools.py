@@ -29,10 +29,20 @@ def writePGM( filename, image ):
     width,height,max_gray,pixels = image  # unpack the tuple
 
     # open a file for writing
+    with open(filename, "w") as outfile:
+        outfile.write(f"P2\n")
+        outfile.write(f"{width} {height}\n")
+        outfile.write(f"{max_gray}\n")
     # write the data in PGM format
     # don't forget the PGM code "P2"
-
+        for i in range(height):
+            for j in range(width):
+                outfile.write(f" {pixels[i][j]} ")
+            outfile.write(f"\n")
+           
     return
+
+writePGM("new_gradient.pgm",readPGM("images/gradient.pgm"))
 
 def invertPGM( image ):
     '''
@@ -43,8 +53,9 @@ def invertPGM( image ):
     width,height,max_gray,pixels = image  # unpack the tuple
 
     # your code
+
     # create a new pixel array of inverted data 
-    inverted = []  # you can use a similar nested comprehension to the readPGM() function
+    inverted = [[max_gray-(int(pixels[2+i][j])) for j in range(width)] for i in range(height)] # you can use a similar nested comprehension to the readPGM() function
     
     return width,height,max_gray,inverted
 
@@ -56,3 +67,7 @@ print(f"Image with width {image[0]} and height {image[1]}")
 print(f"{image[3]}")
 
 # write further code to test your own functions
+
+gradIm = readPGM("images/gradient.pgm")
+InvertIm = invertPGM(gradIm)
+writePGM("invertGrad.pgm",InvertIm)
