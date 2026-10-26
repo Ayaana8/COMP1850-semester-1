@@ -8,3 +8,19 @@
 #  - Creates a Circle object, using the Point object and a value for radius
 #  - Displays the area of the circle
 #  - Displays the perimeter of the circle
+
+
+from geometry import Point
+from geometry import Circle
+
+xCoordinate = float(input("Enter the x coordinate "))
+yCoordinate = float(input("Enter the y coordinate "))
+
+C = Point(xCoordinate,yCoordinate)
+
+radius = float(input("Enter the radius "))
+
+userCircle = Circle(C,radius)
+
+print(userCircle.area())
+print(userCircle.perimeter())
