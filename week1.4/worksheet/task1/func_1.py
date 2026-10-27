@@ -1,7 +1,9 @@
 
-def func_1(lst_value): 
+def calc_mean(lst_value): 
     ''' 
     write your docstring to explain the function 
+
+    Calculates the mean of the list
     ''' 
 
     sum = 0 
