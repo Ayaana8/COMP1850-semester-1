@@ -25,7 +25,9 @@ def digits_sum(number):
         return 0
 
     # recursive case
-    return number + digits_sum(str(number)[1:])
+    digit = number %10 # Get the digit
+    number = number // 10 # Get the rest of the number
+    return digit + digits_sum(number)
 
 
 # check if correct output is produced
