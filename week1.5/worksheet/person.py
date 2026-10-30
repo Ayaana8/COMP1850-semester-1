@@ -24,6 +24,11 @@ class Person:
         if len(name) == 0:
             raise ValueError
 
+    
+        
+    # Implement methods initials() and is_birthday() here
+    # (see README.md for further details)
+
     def initials(self):
         """
         Returns the person's initials
@@ -33,15 +38,17 @@ class Person:
         initials = ""
         for name in nameList:
             initials += name[0]
-        return initials
+        return str(initials).upper()
 
     def is_birthday(self):
         """
         Returns true if it is the person's birthday today
         """
-        if self.date == date.today():
+        today = date.today()
+
+        if self.birth.month == today.month and self.birth.day == today.day:
             return True
-        return False   
-        
-    # Implement methods initials() and is_birthday() here
-    # (see README.md for further details)
+        return False  
+
+
+

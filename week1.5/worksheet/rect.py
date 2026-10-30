@@ -14,14 +14,18 @@ class Rectangle:
         self.height = height
 
         if not isinstance(width,int):
-            raise TypeError("Width must be an integer")
+            raise TypeError
         if not isinstance(height,int):
-            raise TypeError("Height must be an integer")
+            raise TypeError
 
         if width <= 0 or height <=0:
             raise ValueError
 
-    def isSqaure(self):
+    
+    # Implement methods is_square(), area() & perimeter() here
+    # (See README.md for details of what they should do)
+
+    def is_square(self):
         """
         Returns true if the rectangle is a square, and false if it isn't
         """
@@ -41,5 +45,5 @@ class Rectangle:
         """
         return 2*self.width + 2*self.height
 
-    # Implement methods is_square(), area() & perimeter() here
-    # (See README.md for details of what they should do)
+    
+
