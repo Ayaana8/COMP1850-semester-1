@@ -22,11 +22,11 @@ class Dataset:
         Any existing data will be deleted.
         """
 
-        with open(filename,'r') as file:
+        with open(filename,'r') as file: 
             data = file.readlines()
             data = [ line.strip().split(",") for line in data]
 
-        self.data = data
+        self.data = data.
 
     def __len__(self):
         """
