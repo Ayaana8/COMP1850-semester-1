@@ -41,6 +41,15 @@ class QuakeDataset:
         # dictionaries. You will need to extract the required values from
         # each dictionary and convert them into the required types before
         # creating a Quake object and storing it in the list.
+        reader = self.feed.reader()
+        
+        for line in reader:
+            #time = line["time"].fromisoformat()
+            longitude = float(line["longitude"])
+            latitude = float(line["latitude"])
+            depth = float(line["depth"])
+            magnitude = float(line["magnitude"])
+            self.data.append(Quake(time,longitude,latitude,latitude,depth,magnitude))
 
     def __len__(self):
         """
@@ -48,12 +57,16 @@ class QuakeDataset:
         """
         # Write code here that returns the number of quakes downloaded
 
+        return len(self.data)
+
     def __str__(self):
         """
         Returns information on this dataset as a string.
         """
         # Write code here to create and return a string representation
         # (Include number of quakes and details of the feed that was used)
+
+        return f"Number of quakes: {len(self)}"
 
     def mean_depth(self):
         """
@@ -91,3 +104,4 @@ class QuakeDataset:
         """
         # Write code here that finds and returns the strongest quake
         # (i.e., the one with the largest magnitude)
+

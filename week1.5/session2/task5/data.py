@@ -26,7 +26,7 @@ class Dataset:
             data = file.readlines()
             data = [ line.strip().split(",") for line in data]
 
-        self.data = data.
+        self.data = data
 
     def __len__(self):
         """
