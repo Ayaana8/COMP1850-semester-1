@@ -14,3 +14,8 @@ from feed import QuakeFeed
 feed = QuakeFeed("4.5", "week")
 dataSet = QuakeDataset(feed)
 dataSet.read_feed()
+print(len(dataSet))
+print(dataSet)
+print(dataSet.strongest_quake())
+print(dataSet.mean_magnitude())
+
