@@ -7,6 +7,7 @@ outputFile = input("Output: ")
 
 
 def blur(inputFile, outputFile):
+    """ Takes an image and carries out a 3x3 blur """
     inputImage = Image()
     inputImage.read_pgm(inputFile)
     outputImage = Image.create(inputImage.width, inputImage.height)
