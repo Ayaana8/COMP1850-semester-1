@@ -11,13 +11,23 @@ data = pandas.read_csv("lifestyle_data.csv")
 
 # Find the total number of students
 
+print(len(data))
+
 # Find the mean average GPA of the students
+
+print(data["GPA"].mean())
 
 # Find the standard deviation of how much sleep students get per day
 
+print(data["Sleep_Hours_Per_Day"].std())
+
 # Find the maximum amount of study hours per day
 
+print(data["Study_Hours_Per_Day"].max())
+
 # Sort the students by social hours per day ascending (lowest -> highest)
+
+data.sort_values(by="Social_Hours_Per_Day")
 
 # Add a column 'Total_hours' which adds together all the Hours_Per_Day columns into one
 
